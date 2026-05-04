@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<%- include("../partials/head") %>
+<body class="night-ocean">
+  <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <span id="scroll-progress-bar"></span>
+  </div>
+
+  <%- include("../partials/ocean-bg") %>
+
+  <%- include("../partials/header") %>
+
+  <main id="main-content">
+    <section class="section hero page-hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-hero>
+          <p class="hero-kicker">Liên hệ với AquaTech</p>
+          <h1 class="hero-title">Bạn đang có ý tưởng nhưng chưa biết bắt đầu từ đâu?</h1>
+          <p class="hero-lead">
+            Mô tả sơ bộ nhu cầu của bạn — Đội ngũ AquaTech sẽ giúp bạn biến thành giải pháp cụ thể.
+            <br><br>
+            <strong>Tư vấn miễn phí • Rõ ràng giải pháp • Không phát sinh mập mờ</strong>
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact-form-page">Nhận tư vấn miễn phí</a>
+            <a class="btn btn-secondary" href="https://zalo.me/84964784841" target="_blank" rel="noreferrer">Inbox ngay qua Zalo</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" data-hero>
+          <h2>Kênh kết nối nhanh</h2>
+          <ul class="contact-list">
+            <li><i data-lucide="phone" class="icon-inline"></i> <strong>Hotline:</strong> <a href="tel:+84867385383">0867 385 383</a></li>
+            <li><i data-lucide="message-circle" class="icon-inline"></i> <strong>Zalo:</strong> <a href="https://zalo.me/0867385383" target="_blank" rel="noreferrer">zalo.me/0867385383</a> <span style="color: #6fe0ff; font-size: 0.9rem; font-weight: 600;"><i data-lucide="arrow-left" class="icon-inline"></i> phản hồi nhanh nhất</span></li>
+            <li><i data-lucide="mail" class="icon-inline"></i> <strong>Email:</strong> <a href="mailto:dphamthe67@gmail.com">dphamthe67@gmail.com</a></li>
+          </ul>
+          <p class="card-copy">Phản hồi trong 24h • Tư vấn hoàn toàn miễn phí</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="contact-form-page">
+      <div class="container contact-shell">
+        <div class="section-head" data-animate>
+          <p class="kicker">Form yêu cầu tư vấn</p>
+          <h2 class="section-title">Mô tả nhu cầu của bạn</h2>
+          <p class="section-subtitle">
+            Thông tin càng rõ ràng, giải pháp của chúng tôi sẽ càng sát với bài toán thực tế của bạn.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <aside class="contact-panel" data-animate>
+            <h3>Vì sao nên liên hệ AquaTech ngay?</h3>
+            <ul class="why-contact-list">
+              <li>
+                <span class="why-contact-label">Không biết bắt đầu từ đâu</span>
+                <span class="why-contact-arrow">→</span>
+                <span class="why-contact-detail">Được tư vấn rõ ràng về stack & quy trình</span>
+              </li>
+              <li>
+                <span class="why-contact-label">Sợ làm xong không dùng được</span>
+                <span class="why-contact-arrow">→</span>
+                <span class="why-contact-detail">Có demo & định hướng trước từng giai đoạn</span>
+              </li>
+              <li>
+                <span class="why-contact-label">Ngại chi phí cao</span>
+                <span class="why-contact-arrow">→</span>
+                <span class="why-contact-detail">Chia scope theo ngân sách, tối ưu từng bước</span>
+              </li>
+              <li>
+                <span class="why-contact-label">Đã từng thuê dev nhưng fail</span>
+                <span class="why-contact-arrow">→</span>
+                <span class="why-contact-detail">Chúng tôi làm lại đúng từ đầu với cách tiếp cận khác</span>
+              </li>
+            </ul>
+          </aside>
+
+          <div class="contact-panel" data-animate>
+            <form class="contact-form" data-api-form="lead" novalidate>
+              <input type="hidden" name="source_page" value="/lien-he">
+
+              <div class="field">
+                <label for="full-name">Họ và tên</label>
+                <input id="full-name" name="full_name" type="text" placeholder="Ví dụ: Nguyễn Văn A" required>
+              </div>
+
+              <div class="field">
+                <label for="phone">Số điện thoại *</label>
+                <input id="phone" name="phone" type="tel" placeholder="Ví dụ: 0867 385 383" required>
+              </div>
+
+              <div class="field">
+                <label for="email">Email (tùy chọn)</label>
+                <input id="email" name="email" type="email" placeholder="ban@congty.com">
+              </div>
+
+              <div class="field">
+                <label for="service">Dịch vụ quan tâm</label>
+                <select id="service" name="service_interest" data-prefill="service" required>
+                  <option value="">Chọn dịch vụ phù hợp nhất</option>
+                  <% services.forEach((service) => { %>
+                    <option value="<%= service.slug %>"><%= service.name %></option>
+                  <% }) %>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="message">Mô tả nhanh yêu cầu</label>
+                <textarea id="message" name="message" placeholder="Ví dụ: Tôi cần làm website bán hàng / app quản lý / tool tự động... Mục tiêu, tính năng chính, deadline mong muốn..." required></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Nhận tư vấn & báo giá ngay</button>
+              <p class="form-note form-note-trust" data-form-status role="status" aria-live="polite">
+                ✓ Phản hồi trong 24h • ✓ Tư vấn hoàn toàn miễn phí • ✓ Cam kết không spam
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quy trình sau khi gửi -->
+    <section class="section" id="contact-flow">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="kicker">Sau khi gửi yêu cầu</p>
+          <h2 class="section-title">Bạn sẽ nhận được gì?</h2>
+        </div>
+
+        <div class="process-cards-grid" style="grid-template-columns: repeat(4, 1fr); gap: 1.2rem;">
+          <div class="process-card" data-animate>
+            <div class="process-card-header">
+              <div class="process-number" style="font-size: 1.2rem;">1️⃣</div>
+              <h3 class="process-card-title">Xác nhận yêu cầu</h3>
+            </div>
+            <p class="process-card-copy">AquaTech nhận được yêu cầu của bạn</p>
+          </div>
+
+          <div class="process-card" data-animate>
+            <div class="process-card-header">
+              <div class="process-number" style="font-size: 1.2rem;">2️⃣</div>
+              <h3 class="process-card-title">Liên hệ tư vấn</h3>
+            </div>
+            <p class="process-card-copy">Team liên hệ để hiểu rõ chi tiết yêu cầu</p>
+          </div>
+
+          <div class="process-card" data-animate>
+            <div class="process-card-header">
+              <div class="process-number" style="font-size: 1.2rem;">3️⃣</div>
+              <h3 class="process-card-title">Đề xuất giải pháp</h3>
+            </div>
+            <p class="process-card-copy">Nhận hướng giải pháp + báo giá chi tiết</p>
+          </div>
+
+          <div class="process-card" data-animate>
+            <div class="process-card-header">
+              <div class="process-number" style="font-size: 1.2rem;">4️⃣</div>
+              <h3 class="process-card-title">Bắt đầu dự án</h3>
+            </div>
+            <p class="process-card-copy">Nếu phù hợp, bắt đầu theo Agile Scrum</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include("../partials/footer") %>
+</body>
+</html>

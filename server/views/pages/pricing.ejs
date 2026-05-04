@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<%- include("../partials/head") %>
+<body class="night-ocean">
+  <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <span id="scroll-progress-bar"></span>
+  </div>
+
+  <%- include("../partials/ocean-bg") %>
+
+  <%- include("../partials/header") %>
+
+  <main id="main-content">
+    <section class="section hero page-hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-hero>
+          <p class="hero-kicker">Bảng giá AquaTech</p>
+          <h1 class="hero-title">Bảng giá cập nhật theo gói Basic, Standard, Advanced cho từng dịch vụ</h1>
+          <p class="hero-lead">
+            Giá bên dưới là mốc tham chiếu để bạn dự toán nhanh. Báo giá cuối cùng được chốt theo scope,
+            dữ liệu đầu vào, mức độ tích hợp và deadline thực tế.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/lien-he">Nhận estimate theo scope</a>
+            <a class="btn btn-secondary" href="/dich-vu">Xem chi tiết từng dịch vụ</a>
+          </div>
+
+          <div class="hero-stats">
+            <article class="stat-card">
+              <p class="stat-value"><span data-count="<%= pricingCatalog.length %>" data-suffix=" nhóm"><%= pricingCatalog.length %> nhóm</span></p>
+              <p class="stat-label">Danh mục giá hiện có</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-value"><span data-count="24" data-suffix="h">24h</span></p>
+              <p class="stat-label">Phản hồi hướng giải pháp</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-value"><span data-count="3" data-suffix=" gói">3 gói</span></p>
+              <p class="stat-label">Mỗi dịch vụ theo cấp độ</p>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-card" data-hero>
+          <h2>Cách đọc bảng giá nhanh</h2>
+          <ul class="hero-checklist">
+            <li>Basic: MVP nhanh, scope gọn, ưu tiên tốc độ</li>
+            <li>Standard: đầy đủ nghiệp vụ cốt lõi, vận hành được ngay</li>
+            <li>Advanced: mở rộng hệ thống, phân quyền, tích hợp sâu</li>
+            <li>Timeline là ước lượng theo scope thông thường</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="pricing-catalog">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="kicker">Catalog giá</p>
+          <h2 class="section-title">Bảng giá chi tiết theo từng nhóm dịch vụ</h2>
+          <p class="section-subtitle">
+            Nếu scope của bạn nằm giữa 2 gói, team sẽ đề xuất phương án lai để tối ưu chi phí mà vẫn đạt KPI.
+          </p>
+        </div>
+
+        <div class="pricing-page-grid">
+          <% pricingCatalog.forEach((service) => { %>
+            <article class="pricing-service-card" data-animate id="goi-<%= service.slug %>">
+              <div class="pricing-service-head">
+                <div>
+                  <p class="price-label">Bảng giá cập nhật</p>
+                  <h3 class="pricing-service-title"><%= service.name %></h3>
+                </div>
+                <a class="btn btn-secondary pricing-jump" href="/lien-he?service=<%= service.slug %>">Nhận báo giá theo case</a>
+              </div>
+
+              <p class="card-copy"><%= service.intro %></p>
+
+              <div class="pricing-tier-grid">
+                <% service.packages.forEach((pkg) => { %>
+                  <article class="pricing-tier-card">
+                    <p class="price-label"><%= pkg.tier %></p>
+                    <p class="price-value"><%= pkg.price %></p>
+                    <p class="price-note">Timeline: <strong><%= pkg.timeline %></strong></p>
+                    <ul class="card-list">
+                      <% pkg.features.forEach((feature) => { %>
+                        <li><%= feature %></li>
+                      <% }) %>
+                    </ul>
+                  </article>
+                <% }) %>
+              </div>
+            </article>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing-cta">
+      <div class="container contact-shell">
+        <div class="section-head" data-animate>
+          <p class="kicker">Cần estimate sát hơn?</p>
+          <h2 class="section-title">Gửi scope để nhận estimate theo đúng mức độ phức tạp của dự án</h2>
+          <p class="section-subtitle">
+            Team sẽ tách scope theo milestone, để bạn linh hoạt chọn gói phù hợp ngân sách và mục tiêu kinh doanh.
+          </p>
+          <a class="btn btn-primary" href="/lien-he">Gửi brief ngay</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include("../partials/footer") %>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<%- include("../partials/head") %>
+<body class="night-ocean">
+  <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <span id="scroll-progress-bar"></span>
+  </div>
+
+  <%- include("../partials/ocean-bg") %>
+
+  <%- include("../partials/header") %>
+
+  <main id="main-content">
+    <section class="section hero page-hero">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-hero>
+          <p class="hero-kicker">404</p>
+          <h1 class="hero-title">Trang bạn tìm không tồn tại</h1>
+          <p class="hero-lead">Đường dẫn có thể đã thay đổi hoặc nội dung đã được cập nhật.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/">Quay về trang chủ</a>
+            <a class="btn btn-secondary" href="/dich-vu">Xem danh sách dịch vụ</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" data-hero>
+          <h2>Cần hỗ trợ nhanh?</h2>
+          <p>Gửi yêu cầu trực tiếp để AquaTech hướng dẫn bạn vào đúng nội dung cần xem.</p>
+          <a class="btn btn-primary" href="/lien-he">Liên hệ ngay</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <%- include("../partials/footer") %>
+</body>
+</html>

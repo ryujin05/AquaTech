@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="vi">
+<%- include("../partials/head") %>
+<body class="night-ocean">
+  <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <span id="scroll-progress-bar"></span>
+  </div>
+
+  <%- include("../partials/ocean-bg") %>
+
+  <%- include("../partials/header") %>
+
+  <main id="main-content">
+    <section class="section hero page-hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-hero>
+          <p class="hero-kicker">Công nghệ</p>
+          <h1 class="hero-title">Công nghệ được lựa chọn để tối ưu hiệu quả, chi phí và khả năng mở rộng</h1>
+          <p class="hero-lead">
+            Không chạy theo công nghệ mới. Chúng tôi chỉ chọn công nghệ phù hợp với bài toán thực tế của bạn — ổn định, dễ bảo trì, dễ mở rộng, và tối ưu chi phí vận hành.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/lien-he">Tư vấn stack phù hợp</a>
+            <a class="btn btn-secondary" href="/dich-vu">Xem dịch vụ</a>
+          </div>
+
+          <div class="hero-stats">
+            <article class="stat-card">
+              <p class="stat-value"><span data-count="20" data-suffix="+">20+</span></p>
+              <p class="stat-label">Công nghệ sẵn sàng</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-value">5</p>
+              <p class="stat-label">Nhóm năng lực</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-value">100%</p>
+              <p class="stat-label">Phù hợp bài toán</p>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-card" data-hero>
+          <h2>Triết lý công nghệ</h2>
+          <p style="color: #6fe0ff; font-weight: 600; margin: 1rem 0 0;">Không bán công nghệ — dùng công nghệ để giải quyết vấn đề</p>
+          <ul class="hero-checklist">
+            <li>Chọn theo bài toán thực tế, không theo trend</li>
+            <li>Ưu tiên ổn định & dễ bảo trì hơn "nóng vội"</li>
+            <li>Code sạch, dễ nâng cấp — không "đập đi làm lại"</li>
+            <li>Luôn có phương án scale khi phát triển</li>
+            <li>Tối ưu chi phí vận hành cho khách</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Tech Philosophy Section -->
+    <section class="section" id="tech-philosophy">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="kicker">Tại sao lựa chọn công nghệ quan trọng</p>
+          <h2 class="section-title">Một quyết định sai dẫn đến "đập đi làm lại"</h2>
+        </div>
+
+        <div class="philosophy-grid">
+          <article class="philosophy-card" data-animate>
+            <div class="philosophy-icon"><i data-lucide="bar-chart-2" class="icon-inline"></i></div>
+            <h3>Chọn theo bài toán, không theo trend</h3>
+            <p>Stack "hot nhất" năm nay có thể là rủi ro lớn nhất năm tới. Chúng tôi chọn công nghệ dựa trên:</p>
+            <ul class="philosophy-list">
+              <li>Yêu cầu thực tế của hệ thống</li>
+              <li>Khối lượng dữ liệu & tốc độ xử lý cần</li>
+              <li>Budget phát triển & vận hành</li>
+              <li>Khả năng tìm developer bảo trì sau</li>
+            </ul>
+          </article>
+
+          <article class="philosophy-card" data-animate>
+            <div class="philosophy-icon"><i data-lucide="wrench" class="icon-inline"></i></div>
+            <h3>Ổn định & dễ bảo trì hơn "tiên tiến"</h3>
+            <p>Hệ thống cần chạy 24/7, không phải "demo thì đẹp". Ưu tiên:</p>
+            <ul class="philosophy-list">
+              <li>Công nghệ có cộng đồng lớn & tài liệu tốt</li>
+              <li>Tránh công nghệ quá nổi hoặc quá cũ</li>
+              <li>Khả năng debug & fix bug nhanh chóng</li>
+              <li>Dễ onboarding cho team mới</li>
+            </ul>
+          </article>
+
+          <article class="philosophy-card" data-animate>
+            <div class="philosophy-icon"><i data-lucide="trending-up" class="icon-inline"></i></div>
+            <h3>Kiến trúc tách lớp từ ngày 1</h3>
+            <p>Dự án sẽ phát triển. Mở rộng không phải "đập đi làm lại":</p>
+            <ul class="philosophy-list">
+              <li>API rõ ràng, dễ tích hợp module mới</li>
+              <li>Frontend, Backend, Data độc lập nhau</li>
+              <li>Database schema linh hoạt</li>
+              <li>Sẵn sàng scale từ 1K → 1M người dùng</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Tech Stack Section -->
+    <section class="section" id="stack-core">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="kicker">Năng lực kỹ thuật</p>
+          <h2 class="section-title">5 nhóm công nghệ cốt lõi</h2>
+          <p class="section-subtitle">Mỗi nhóm được chọn để giải quyết một bài toán cụ thể trong vòng đời dự án</p>
+        </div>
+
+        <!-- Tech Stack Cards -->
+        <div class="tech-stack-grid">
+          <article class="tech-stack-card" data-animate>
+            <div class="tech-stack-icon"><i data-lucide="laptop" class="icon-inline"></i></div>
+            <h3 class="tech-stack-title">Web & Backend</h3>
+            <p class="tech-stack-desc">Xây dựng hệ thống web ổn định, tốc độ nhanh, dễ mở rộng khi lượng người dùng tăng.</p>
+
+            <div class="stack-group">
+              <p class="stack-label">Frontend</p>
+              <ul class="stack-list">
+                <li>React / NextJS</li>
+                <li>Vite (bundler nhanh)</li>
+                <li>TypeScript (code an toàn)</li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <p class="stack-label">Backend</p>
+              <ul class="stack-list">
+                <li>Node.js + Express / Elysia</li>
+                <li>Prisma ORM (query dễ)</li>
+                <li>API RESTful / GraphQL</li>
+              </ul>
+            </div>
+
+            <p class="stack-benefit"><i data-lucide="sparkles" class="icon-inline"></i> Kết quả: Tốc độ tải nhanh, SEO tốt, dễ maintain</p>
+          </article>
+
+          <article class="tech-stack-card" data-animate>
+            <div class="tech-stack-icon"><i data-lucide="smartphone" class="icon-inline"></i></div>
+            <h3 class="tech-stack-title">Mobile App</h3>
+            <p class="tech-stack-desc">Phát triển ứng dụng đa nền tảng, tối ưu chi phí nhưng vẫn mượt mà & hiệu quả.</p>
+
+            <div class="stack-group">
+              <p class="stack-label">Cross-platform</p>
+              <ul class="stack-list">
+                <li>Flutter (tốc độ phát triển nhanh)</li>
+                <li>React Native (JS ecosystem)</li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <p class="stack-label">Native (nếu cần)</p>
+              <ul class="stack-list">
+                <li>Kotlin (Android)</li>
+                <li>Swift (iOS)</li>
+              </ul>
+            </div>
+
+            <p class="stack-benefit"><i data-lucide="sparkles" class="icon-inline"></i> Kết quả: 1 codebase → 2 platform, tiết kiệm 40% chi phí</p>
+          </article>
+
+          <article class="tech-stack-card" data-animate>
+            <div class="tech-stack-icon"><i data-lucide="database" class="icon-inline"></i></div>
+            <h3 class="tech-stack-title">Database & Storage</h3>
+            <p class="tech-stack-desc">Lưu trữ dữ liệu an toàn, truy vấn tối ưu, phù hợp từng quy mô dự án.</p>
+
+            <div class="stack-group">
+              <p class="stack-label">SQL (cần JOIN)</p>
+              <ul class="stack-list">
+                <li>PostgreSQL (mạnh mẽ)</li>
+                <li>MySQL (phổ biến)</li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <p class="stack-label">NoSQL (flexible)</p>
+              <ul class="stack-list">
+                <li>MongoDB (JSON documents)</li>
+                <li>Redis (cache nhanh)</li>
+              </ul>
+            </div>
+
+            <p class="stack-benefit"><i data-lucide="sparkles" class="icon-inline"></i> Kết quả: Truy vấn nhanh, dữ liệu an toàn, backup tự động</p>
+          </article>
+
+          <article class="tech-stack-card" data-animate>
+            <div class="tech-stack-icon"><i data-lucide="settings" class="icon-inline"></i></div>
+            <h3 class="tech-stack-title">Automation & Scraping</h3>
+            <p class="tech-stack-desc">Tự động hóa quy trình, giảm thời gian thủ công, tăng hiệu suất vận hành.</p>
+
+            <div class="stack-group">
+              <p class="stack-label">Browser Automation</p>
+              <ul class="stack-list">
+                <li>Playwright (nhanh, tin cậy)</li>
+                <li>Puppeteer (Chrome control)</li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <p class="stack-label">Data & Workflow</p>
+              <ul class="stack-list">
+                <li>Python (data processing)</li>
+                <li>n8n (workflow no-code)</li>
+              </ul>
+            </div>
+
+            <p class="stack-benefit"><i data-lucide="sparkles" class="icon-inline"></i> Kết quả: Tiết kiệm hàng giờ thủ công/ngày, giảm sai sót con người</p>
+          </article>
+
+          <article class="tech-stack-card" data-animate>
+            <div class="tech-stack-icon"><i data-lucide="cloud" class="icon-inline"></i></div>
+            <h3 class="tech-stack-title">Hạ tầng & Triển khai</h3>
+            <p class="tech-stack-desc">Triển khai ổn định, dễ mở rộng, đảm bảo hệ thống luôn hoạt động liên tục.</p>
+
+            <div class="stack-group">
+              <p class="stack-label">Cloud & Server</p>
+              <ul class="stack-list">
+                <li>VPS (khống chế chi phí)</li>
+                <li>AWS / GCP (scale tự động)</li>
+              </ul>
+            </div>
+
+            <div class="stack-group">
+              <p class="stack-label">DevOps</p>
+              <ul class="stack-list">
+                <li>Docker (containerize)</li>
+                <li>CI/CD automation</li>
+              </ul>
+            </div>
+
+            <p class="stack-benefit"><i data-lucide="sparkles" class="icon-inline"></i> Kết quả: Uptime 99.9%, deploy nhanh, scale mà không downtime</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Linked to Tech -->
+    <section class="section" id="tech-benefits">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="kicker">Công nghệ = Lợi ích khách hàng</p>
+          <h2 class="section-title">Kết nối công nghệ với giá trị thực tế</h2>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="benefit-card" data-animate>
+            <div class="benefit-icon"><i data-lucide="rocket" class="icon-inline"></i></div>
+            <h3>Tốc độ nhanh</h3>
+            <p><strong>Công nghệ:</strong> NextJS, React, Redis cache</p>
+            <p><strong>Lợi ích:</strong> Tải trang trong 0.5s → tăng tỷ lệ chuyển đổi 30%</p>
+          </article>
+
+          <article class="benefit-card" data-animate>
+            <div class="benefit-icon"><i data-lucide="dollar-sign" class="icon-inline"></i></div>
+            <h3>Tối ưu chi phí</h3>
+            <p><strong>Công nghệ:</strong> VPS, Docker, tự động hóa</p>
+            <p><strong>Lợi ích:</strong> Giảm 40-60% chi phí vận hành so với custom</p>
+          </article>
+
+          <article class="benefit-card" data-animate>
+            <div class="benefit-icon"><i data-lucide="lock" class="icon-inline"></i></div>
+            <h3>Bảo mật tốt</h3>
+            <p><strong>Công nghệ:</strong> TypeScript, Prisma, HTTPS, input validation</p>
+            <p><strong>Lợi ích:</strong> Giảm rủi ro dữ liệu, compliance GDPR</p>
+          </article>
+
+          <article class="benefit-card" data-animate>
+            <div class="benefit-icon"><i data-lucide="trending-up" class="icon-inline"></i></div>
+            <h3>Dễ mở rộng</h3>
+            <p><strong>Công nghệ:</strong> API-first, microservices ready, DB schema flexible</p>
+            <p><strong>Lợi ích:</strong> Thêm 10x người dùng mà không cần viết lại code</p>
+          </article>
+
+          <article class="benefit-card" data-animate>
+            <div class="benefit-icon"><i data-lucide="users" class="icon-inline"></i></div>
+            <h3>Dễ bàn giao</h3>
+            <p><strong>Công nghệ:</strong> Công nghệ phổ biến, code sạch, tài liệu tốt</p>
+            <p><strong>Lợi ích:</strong> Team in-house hoặc vendor khác có thể tiếp tục</p>
+          </article>
+
+          <article class="benefit-card" data-animate>
+            <div class="benefit-icon"><i data-lucide="clock" class="icon-inline"></i></div>
+            <h3>Phát triển nhanh</h3>
+            <p><strong>Công nghệ:</strong> Framework mạnh, automation testing, CI/CD</p>
+            <p><strong>Lợi ích:</strong> Từ ý tưởng đến launch chỉ 2-3 tuần</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Delivery Model -->
+    <section class="section" id="tech-delivery">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="kicker">Cách thức triển khai</p>
+          <h2 class="section-title">Công nghệ được đưa vào sản xuất như thế nào</h2>
+          <p class="section-subtitle">
+            Không chỉ code xong là kết thúc. Tập trung vào khả năng chạy thật, đo được và mở rộng được.
+          </p>
+        </div>
+
+        <div class="showcase-grid">
+          <article class="showcase-card" data-animate>
+            <h3 class="card-title">Build theo milestone</h3>
+            <p class="card-copy">Mỗi cụm tính năng đều có demo, testing tự động và checklist QA trước khi chốt.</p>
+            <div class="metric-row">
+              <span class="metric">Review theo sprint</span>
+              <span class="metric">Tiến độ minh bạch</span>
+            </div>
+          </article>
+
+          <article class="showcase-card" data-animate>
+            <h3 class="card-title">Theo dõi sau launch</h3>
+            <p class="card-copy">Monitoring chỉ số vận hành: tốc độ, lỗi, người dùng để tối ưu liên tục.</p>
+            <div class="metric-row">
+              <span class="metric">Performance tracking</span>
+              <span class="metric">Alert tự động</span>
+            </div>
+          </article>
+
+          <article class="showcase-card" data-animate>
+            <h3 class="card-title">Sẵn sàng scale</h3>
+            <p class="card-copy">Kiến trúc tách lớp từ ngày 1 giúp thêm module, người dùng mà không lo gãy hệ thống.</p>
+            <div class="metric-row">
+              <span class="metric">API-first</span>
+              <span class="metric">Scale theo phase</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA with Strong Closing Statement -->
+    <section class="section" id="tech-closing">
+      <div class="container contact-shell">
+        <div class="section-head" data-animate>
+          <p class="kicker">Câu chốt</p>
+          <h2 class="section-title" style="font-size: clamp(1.8rem, 3.2vw, 2.6rem); max-width: 50ch;">Công nghệ chỉ là công cụ — điều quan trọng là giải pháp phù hợp với bài toán của bạn</h2>
+          <p class="section-subtitle" style="margin-top: 1.5rem; max-width: 70ch;">
+            Chúng tôi không bán công nghệ, chúng tôi dùng công nghệ để giải quyết vấn đề của bạn.
+            <br><br>
+            Hãy kể cho chúng tôi nghe bài toán → Chúng tôi sẽ đề xuất stack phù hợp → Code sạch, dễ scale, tối ưu chi phí.
+          </p>
+          <a class="btn btn-primary" href="/lien-he" style="margin-top: 1.5rem;">Tư vấn stack phù hợp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include("../partials/footer") %>
+</body>
+</html>
+

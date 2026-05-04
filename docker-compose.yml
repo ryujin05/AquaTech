@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: aquaweb-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: aquaweb
+      POSTGRES_USER: aquaweb
+      POSTGRES_PASSWORD: aquaweb
+    ports:
+      - "55432:5432"
+    volumes:
+      - aquaweb_pgdata:/var/lib/postgresql/data
+
+volumes:
+  aquaweb_pgdata:

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<%- include("../partials/head") %>
+<body>
+  <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <span id="scroll-progress-bar"></span>
+  </div>
+
+  <div class="shoreline-flow" aria-hidden="true">
+    <canvas id="bubble-canvas" class="bg-bubble-canvas"></canvas>
+  </div>
+
+  <%- include("../partials/header") %>
+
+  <main id="main-content">
+    <section class="section hero page-hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-hero>
+          <p class="hero-kicker"><%= caseStudy.industry %></p>
+          <p class="page-breadcrumb"><a href="/">Trang chủ</a> / <a href="/case-studies">Case Studies</a> / <span><%= caseStudy.title %></span></p>
+          <h1 class="hero-title"><%= caseStudy.title %></h1>
+          <p class="hero-lead"><%= caseStudy.summary %></p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/lien-he">Áp dụng mô hình này cho dự án của bạn</a>
+            <a class="btn btn-secondary" href="/case-studies">Quay lại danh sách case study</a>
+          </div>
+
+          <div class="hero-stats">
+            <% caseStudy.metrics.forEach((metric) => { %>
+              <article class="stat-card">
+                <p class="stat-value"><%= metric.value %></p>
+                <p class="stat-label"><%= metric.label %></p>
+              </article>
+            <% }) %>
+          </div>
+        </div>
+
+        <aside class="hero-card" data-hero>
+          <h2>Stack triển khai</h2>
+          <div class="hero-tags">
+            <% caseStudy.stack.forEach((tech) => { %>
+              <span><%= tech %></span>
+            <% }) %>
+          </div>
+          <ul class="hero-checklist">
+            <li>Ngành hàng: <strong><%= caseStudy.industry %></strong></li>
+            <li>Timeline: <strong><%= caseStudy.timeline %></strong></li>
+            <li>Dữ liệu đo lường theo KPI kinh doanh</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="case-context">
+      <div class="container service-detail-grid">
+        <article class="service-detail-panel" data-animate>
+          <h2 class="section-title service-detail-title">Bài toán đầu vào</h2>
+          <p class="card-copy"><%= caseStudy.challenge %></p>
+        </article>
+
+        <article class="service-detail-panel" data-animate>
+          <h2 class="section-title service-detail-title">Cách AquaTech xử lý</h2>
+          <ul class="card-list service-detail-list">
+            <% caseStudy.approach.forEach((step) => { %>
+              <li><%= step %></li>
+            <% }) %>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="case-outcomes">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="kicker">Kết quả sau triển khai</p>
+          <h2 class="section-title">Tác động đo được trên vận hành và tăng trưởng</h2>
+        </div>
+
+        <div class="showcase-grid">
+          <% caseStudy.results.forEach((result) => { %>
+            <article class="showcase-card" data-animate>
+              <h3 class="card-title">Kết quả</h3>
+              <p class="card-copy"><%= result %></p>
+            </article>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="case-lesson">
+      <div class="container contact-shell">
+        <div class="section-head" data-animate>
+          <p class="kicker">Bài học rút ra</p>
+          <h2 class="section-title"><%= caseStudy.lessons %></h2>
+          <p class="section-subtitle">
+            Nếu bạn có bối cảnh tương tự, AquaTech có thể map nhanh chiến lược, stack và timeline theo mức độ ưu tiên hiện tại.
+          </p>
+          <a class="btn btn-primary" href="/lien-he">Nhận đề xuất theo case</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include("../partials/footer") %>
+</body>
+</html>

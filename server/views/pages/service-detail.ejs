@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<%- include("../partials/head") %>
+<body class="night-ocean">
+  <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <span id="scroll-progress-bar"></span>
+  </div>
+
+  <%- include("../partials/ocean-bg") %>
+
+  <%- include("../partials/header") %>
+
+  <main id="main-content">
+    <section class="section hero page-hero">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-hero>
+          <p class="hero-kicker"><%= service.category %> Service</p>
+          <p class="page-breadcrumb"><a href="/">Trang chủ</a> / <a href="/dich-vu">Dịch vụ</a> / <span><%= service.name %></span></p>
+          <h1 class="hero-title"><%= service.name %></h1>
+          <p class="hero-lead"><%= service.teaser %></p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/lien-he?service=<%= service.slug %>">Nhận báo giá cho dịch vụ này</a>
+            <a class="btn btn-secondary" href="/dich-vu">Xem dịch vụ khác</a>
+          </div>
+
+          <div class="hero-stats">
+            <article class="stat-card">
+              <p class="stat-value"><%= service.price %></p>
+              <p class="stat-label">Chi phí tham chiếu</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-value"><%= service.timeline %></p>
+              <p class="stat-label">Thời gian triển khai</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-value"><span data-count="4" data-suffix=" bước">4 bước</span></p>
+              <p class="stat-label">Quy trình thực thi</p>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-card" data-hero>
+          <h2>Stack đề xuất</h2>
+          <p>Công nghệ được chọn theo mục tiêu kinh doanh, không build quá mức cần thiết ở giai đoạn đầu.</p>
+          <div class="hero-tags">
+            <% service.technologies.forEach((tech) => { %>
+              <span><%= tech %></span>
+            <% }) %>
+          </div>
+          <ul class="hero-checklist">
+            <li>Code gọn, dễ onboard team mới</li>
+            <li>Có đường nâng cấp backend theo phase</li>
+            <li>Tài liệu bàn giao rõ đầu vào, đầu ra</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container service-detail-grid">
+        <article class="service-detail-panel" data-animate>
+          <h2 class="section-title service-detail-title">Phạm vi bàn giao</h2>
+          <ul class="card-list service-detail-list">
+            <% service.deliverables.forEach((item) => { %>
+              <li><%= item %></li>
+            <% }) %>
+          </ul>
+        </article>
+
+        <article class="service-detail-panel" data-animate>
+          <h2 class="section-title service-detail-title">Kết quả kỳ vọng</h2>
+          <div class="metric-board">
+            <% service.outcomes.forEach((item) => { %>
+              <div class="metric-card">
+                <p class="metric-card-value"><%= item.value %></p>
+                <p class="metric-card-label"><%= item.label %></p>
+              </div>
+            <% }) %>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="kicker">Quy trình</p>
+          <h2 class="section-title">4 bước triển khai cho <%= service.name %></h2>
+        </div>
+
+        <div class="process-shell" data-animate>
+          <div class="timeline-track" aria-hidden="true"></div>
+          <ol class="process-timeline">
+            <% service.process.forEach((step, index) => { %>
+              <li class="process-step" data-animate>
+                <p class="step-index">Bước <%= String(index + 1).padStart(2, '0') %></p>
+                <h3 class="step-title"><%= step %></h3>
+              </li>
+            <% }) %>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="kicker">FAQ</p>
+          <h2 class="section-title">Câu hỏi thường gặp</h2>
+        </div>
+
+        <div class="faq-grid">
+          <% service.faqs.forEach((item) => { %>
+            <details class="faq-item" data-animate>
+              <summary><%= item.q %></summary>
+              <p><%= item.a %></p>
+            </details>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-shell">
+        <div class="section-head" data-animate>
+          <p class="kicker">Liên hệ triển khai</p>
+          <h2 class="section-title">Cần estimate nhanh cho <%= service.name %>?</h2>
+        </div>
+
+        <div class="contact-grid">
+          <aside class="contact-panel" data-animate>
+            <h3>Mốc thông tin cần gửi</h3>
+            <ul class="card-list">
+              <li>Mục tiêu kinh doanh của dự án</li>
+              <li>Deadline mong muốn</li>
+              <li>Nguồn dữ liệu hoặc hệ thống cần kết nối</li>
+              <li>Ngân sách dự kiến để đề xuất stack phù hợp</li>
+            </ul>
+          </aside>
+
+          <div class="contact-panel" data-animate>
+            <form class="contact-form" data-api-form="lead" novalidate>
+              <input type="hidden" name="source_page" value="/dich-vu/<%= service.slug %>">
+
+              <div class="field">
+                <label for="full-name">Họ và tên</label>
+                <input id="full-name" name="full_name" type="text" placeholder="Nguyễn Văn A" required>
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="ban@congty.com" required>
+              </div>
+
+              <div class="field">
+                <label for="service">Dịch vụ quan tâm</label>
+                <select id="service" name="service_interest" required>
+                  <option value="<%= service.slug %>" selected><%= service.name %></option>
+                  <% services.forEach((item) => { %>
+                    <% if (item.slug !== service.slug) { %>
+                      <option value="<%= item.slug %>"><%= item.name %></option>
+                    <% } %>
+                  <% }) %>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="message">Mô tả nhanh yêu cầu</label>
+                <textarea id="message" name="message" placeholder="Mục tiêu, tính năng chính, deadline mong muốn..."></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Gửi yêu cầu tư vấn</button>
+              <p class="form-note" data-form-status role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include("../partials/footer") %>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<%- include("../partials/head") %>
+<body class="night-ocean">
+  <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <span id="scroll-progress-bar"></span>
+  </div>
+
+  <%- include("../partials/ocean-bg") %>
+
+  <%- include("../partials/header") %>
+
+  <main id="main-content">
+    <section class="section hero page-hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-hero>
+          <p class="hero-kicker">Case Studies</p>
+          <h1 class="hero-title">Các bài toán thực tế AquaTech đã triển khai cho doanh nghiệp</h1>
+          <p class="hero-lead">
+            Mỗi case dưới đây mô tả bối cảnh đầu vào, cách xử lý và kết quả đầu ra theo KPI,
+            để bạn hình dung rõ cách team đi từ chiến lược đến implementation.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/lien-he">Gửi bài toán của bạn</a>
+            <a class="btn btn-secondary" href="/dich-vu">Xem full service catalog</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" data-hero>
+          <h2>Case format</h2>
+          <ul class="hero-checklist">
+            <li>Context ngành và mục tiêu kinh doanh</li>
+            <li>Stack và cách chia phase triển khai</li>
+            <li>Metric trước và sau khi launch</li>
+            <li>Bài học có thể áp dụng cho domain khác</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="case-list">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="kicker">Project snapshots</p>
+          <h2 class="section-title">Các case tiêu biểu từ website đến data automation</h2>
+        </div>
+
+        <div class="showcase-grid">
+          <% caseStudies.forEach((item) => { %>
+            <article class="showcase-card" data-animate>
+              <p class="price-label"><%= item.industry %></p>
+              <h3 class="card-title"><%= item.title %></h3>
+              <p class="card-copy"><%= item.summary %></p>
+              <ul class="card-list">
+                <li>Timeline: <%= item.timeline %></li>
+                <li>Stack: <%= item.stack.join(" + ") %></li>
+                <li>Outcome: <%= item.metrics.map((metric) => `${metric.value} ${metric.label}`).join(" | ") %></li>
+              </ul>
+              <a class="card-link" href="/case-studies/<%= item.slug %>">Xem case study chi tiết</a>
+            </article>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="case-cta">
+      <div class="container contact-shell">
+        <div class="section-head" data-animate>
+          <p class="kicker">Mở scope nhanh</p>
+          <h2 class="section-title">Bạn muốn team map bài toán của mình theo format case study này?</h2>
+          <p class="section-subtitle">Gửi bối cảnh và KPI hiện tại, AquaTech sẽ đề xuất hướng đi, stack và ước lượng theo phase.</p>
+          <a class="btn btn-primary" href="/lien-he">Nhận đề xuất triển khai</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include("../partials/footer") %>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<header class="site-header">
+  <div class="container nav-shell">
+    <a class="brand" href="/" aria-label="AquaTech">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="/assets/icons/logo.svg" alt="" width="36" height="36" loading="eager" decoding="async">
+      </span>
+      <span class="brand-text">AquaTech</span>
+    </a>
+
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Mở menu">
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="site-nav" aria-label="Điều hướng chính">
+      <ul class="nav-links" id="nav-links">
+        <li><a class="<%= currentPath === '/' ? 'is-current' : '' %>" href="/">Trang chủ</a></li>
+        <li><a class="<%= currentPath.startsWith('/dich-vu') ? 'is-current' : '' %>" href="/dich-vu">Dịch vụ</a></li>
+        <li><a class="<%= currentPath === '/quy-trinh' ? 'is-current' : '' %>" href="/quy-trinh">Quy trình</a></li>
+        <li><a class="<%= currentPath === '/cong-nghe' ? 'is-current' : '' %>" href="/cong-nghe">Công nghệ</a></li>
+        <li><a class="<%= currentPath.startsWith('/case-studies') ? 'is-current' : '' %>" href="/case-studies">Dự án</a></li>
+        <li><a class="<%= currentPath === '/about' ? 'is-current' : '' %>" href="/about">Giới thiệu</a></li>
+        <li><a class="<%= currentPath === '/lien-he' ? 'is-current' : '' %>" href="/lien-he">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn btn-ghost desktop-only" href="/lien-he">Nhận tư vấn</a>
+  </div>
+</header>

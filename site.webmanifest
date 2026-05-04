@@ -1,0 +1,17 @@
+{
+  "name": "AquaTech",
+  "short_name": "AquaTech",
+  "description": "AquaTech phát triển website, app, desktop software và automation theo yêu cầu.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f6f7fb",
+  "theme_color": "#2f63ff",
+  "icons": [
+    {
+      "src": "./assets/icons/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

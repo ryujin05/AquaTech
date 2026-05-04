@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaTech | Ocean Night Experience</title>
+  <meta name="description" content="AquaTech giao diện đại dương đêm: chữ trắng rõ ràng, nền xanh biển sâu, chuyển động nhẹ và nội dung sạch bản quyền.">
+  <meta name="theme-color" content="#03132f">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aquatech.vn/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:url" content="https://aquatech.vn/">
+  <meta property="og:title" content="AquaTech | Ocean Night Experience">
+  <meta property="og:description" content="Thiết kế theo theme đại dương đêm với điểm nhấn phát quang, giữ độ đọc rõ và sạch nội dung.">
+  <meta property="og:image" content="./assets/icons/logo.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AquaTech | Ocean Night Experience">
+  <meta name="twitter:description" content="UI/UX lấy cảm hứng biển đêm, tập trung độ rõ chữ và cảm giác cao cấp.">
+  <meta name="twitter:image" content="./assets/icons/logo.svg">
+  <link rel="manifest" href="/assets/site-BEWL_2dP.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="/assets/logo-hzA46B8q.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-1wtj0Azw.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-jRsB6sSu.css">
+</head>
+<body class="night-ocean">
+  <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <span id="scroll-progress-bar"></span>
+  </div>
+
+  <div class="shoreline-flow" aria-hidden="true">
+    <canvas id="bubble-canvas" class="bg-bubble-canvas"></canvas>
+  </div>
+
+  <div class="ocean-atmosphere" aria-hidden="true">
+    <span class="depth-glow glow-a"></span>
+    <span class="depth-glow glow-b"></span>
+    <span class="depth-glow glow-c"></span>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="/" aria-label="AquaTech">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20295%20257'%20width='100%25'%20height='100%25'%3e%3cdefs%3e%3clinearGradient%20id='logo-grad'%20x1='0%25'%20y1='0%25'%20x2='100%25'%20y2='100%25'%3e%3cstop%20offset='0%25'%20stop-color='%2306b6d4'%20/%3e%3cstop%20offset='100%25'%20stop-color='%238b5cf6'%20/%3e%3c/linearGradient%3e%3cfilter%20id='glow'%3e%3cfeGaussianBlur%20stdDeviation='4'%20result='coloredBlur'/%3e%3cfeMerge%3e%3cfeMergeNode%20in='coloredBlur'/%3e%3cfeMergeNode%20in='SourceGraphic'/%3e%3c/feMerge%3e%3c/filter%3e%3c/defs%3e%3cpath%20d='M%200%200%20L%20294.2%200%20L%20231.9%20107.9%20L%20185.3%20107.9%20L%20208.4%20148.6%20L%20145.9%20256.8%20L%2040.8%2071.9%20L%2082.2%2071.9%20L%20146.2%20184.6%20L%20167.0%20148.5%20L%20123.5%2071.9%20L%20211.2%2071.9%20L%20231.9%2036.0%20L%20103.1%2036.0%20L%2020.4%2036.0%20Z'%20fill='url(%23logo-grad)'%20filter='url(%23glow)'%20/%3e%3c/svg%3e" alt="" width="36" height="36" loading="eager" decoding="async">
+        </span>
+        <span class="brand-text">AquaTech</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Mở menu">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Điều hướng chính">
+        <ul class="nav-links" id="nav-links">
+          <li><a class="is-current" href="/">Trang chủ</a></li>
+          <li><a href="/dich-vu">Dịch vụ</a></li>
+          <li><a href="/quy-trinh">Quy trình</a></li>
+          <li><a href="/cong-nghe">Công nghệ</a></li>
+          <li><a href="/case-studies">Case Studies</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/lien-he">Liên hệ</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn-ghost desktop-only" href="/lien-he">Nhận tư vấn</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-hero>
+          <p class="hero-kicker">AquaTech Digital Solutions</p>
+          <h1 class="hero-title">Chúng tôi bán giải pháp, không phải sản phẩm</h1>
+          <p class="hero-lead">
+            Chúng tôi phân tích vấn đề, thiết kế giải pháp và xây dựng web/app phù hợp với nhu cầu thực tế. Từ ý tưởng nhỏ đến hệ thống phức tạp — tối ưu chi phí, triển khai nhanh, dùng được ngay.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/lien-he">Nhận tư vấn ngay</a>
+            <a class="btn btn-secondary" href="/dich-vu">Khám phá dịch vụ</a>
+          </div>
+
+          <div class="hero-stats">
+            <article class="stat-card">
+              <p class="stat-value"><span data-count="50" data-suffix="+">50+</span></p>
+              <p class="stat-label">dự án đã triển khai</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-value">Từ 24h</p>
+              <p class="stat-label">bàn giao nhanh</p>
+            </article>
+            <article class="stat-card">
+              <p class="stat-value">đến 60%</p>
+              <p class="stat-label">tối ưu chi phí</p>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-card" data-hero>
+          <h2>Cách chúng tôi giải quyết vấn đề</h2>
+          <p>Phân tích nhu cầu, thiết kế tối ưu, xây dựng nhanh và hỗ trợ toàn diện.</p>
+          <ul class="hero-checklist">
+            <li>Phân tích nhu cầu & pain point thực tế</li>
+            <li>Đề xuất giải pháp tối ưu, không dư thừa</li>
+            <li>Xây dựng nhanh, dễ mở rộng</li>
+            <li>Hỗ trợ triển khai & vận hành</li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="hero-tide" aria-hidden="true">
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+
+    <section class="section" id="services-overview">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="kicker">Dịch vụ cốt lõi</p>
+          <h2 class="section-title">Bạn đang gặp những vấn đề này trong công việc & kinh doanh?</h2>
+          <p class="section-subtitle">AquaTech giúp bạn giải quyết bằng giải pháp công nghệ phù hợp — không dư thừa, không phức tạp.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card" data-animate>
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true"><i data-lucide="monitor" class="icon-inline"></i></span>
+              <h3 class="card-title">Phần mềm Desktop</h3>
+            </div>
+            <div class="card-problem">
+              <p>Quản lý bằng Excel bị lỗi, rối dữ liệu</p>
+              <p>Nhập liệu thủ công mất thời gian</p>
+              <p>Nhân viên làm sai nhưng khó kiểm soát</p>
+            </div>
+            <div class="card-solution">
+              <p>Xây dựng phần mềm riêng giúp bạn quản lý rõ ràng, giảm sai sót và tự động hóa quy trình.</p>
+            </div>
+          </article>
+
+          <article class="service-card" data-animate>
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true"><i data-lucide="zap" class="icon-inline"></i></span>
+              <h3 class="card-title">Landing Page</h3>
+            </div>
+            <div class="card-problem">
+              <p>Chạy ads tốn tiền nhưng không ra đơn</p>
+              <p>Khách vào web rồi thoát ngay</p>
+              <p>Không biết viết nội dung bán hàng</p>
+            </div>
+            <div class="card-solution">
+              <p>Thiết kế landing page tối ưu chuyển đổi giúp bạn tăng tỷ lệ chốt đơn từ traffic sẵn có.</p>
+            </div>
+          </article>
+
+          <article class="service-card" data-animate>
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true"><i data-lucide="globe" class="icon-inline"></i></span>
+              <h3 class="card-title">Website Thương mại</h3>
+            </div>
+            <div class="card-problem">
+              <p>Bán hàng thủ công qua inbox</p>
+              <p>Không quản lý được đơn hàng</p>
+              <p>Phụ thuộc Shopee, TikTok Shop</p>
+            </div>
+            <div class="card-solution">
+              <p>Xây dựng website bán hàng giúp bạn chủ động hệ thống, quản lý đơn và bán 24/7.</p>
+            </div>
+          </article>
+
+          <article class="service-card" data-animate>
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true"><i data-lucide="smartphone" class="icon-inline"></i></span>
+              <h3 class="card-title">App Android & iOS</h3>
+            </div>
+            <div class="card-problem">
+              <p>Khách hàng không quay lại</p>
+              <p>Khó chăm sóc khách hàng cũ</p>
+              <p>Không có hệ thống giữ chân user</p>
+            </div>
+            <div class="card-solution">
+              <p>Phát triển app giúp bạn tăng retention, gửi thông báo và xây dựng tệp khách hàng riêng.</p>
+            </div>
+          </article>
+
+          <article class="service-card" data-animate>
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true"><i data-lucide="settings" class="icon-inline"></i></span>
+              <h3 class="card-title">Dịch vụ khác</h3>
+            </div>
+            <div class="card-problem">
+              <p>Website/app lỗi nhưng không ai sửa</p>
+              <p>Code cũ khó nâng cấp</p>
+              <p>Không biết tích hợp API, thanh toán</p>
+            </div>
+            <div class="card-solution">
+              <p>Chúng tôi hỗ trợ fix bug, tối ưu hệ thống và mở rộng tính năng nhanh chóng.</p>
+            </div>
+          </article>
+
+          <article class="service-card" data-animate>
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true"><i data-lucide="bar-chart-2" class="icon-inline"></i></span>
+              <h3 class="card-title">Tool Scraping Data</h3>
+            </div>
+            <div class="card-problem">
+              <p>Cần data khách hàng nhưng không có</p>
+              <p>Thu thập dữ liệu thủ công quá chậm</p>
+              <p>Không theo dõi được đối thủ</p>
+            </div>
+            <div class="card-solution">
+              <p>Xây dựng tool scraping giúp bạn lấy dữ liệu tự động, nhanh và chính xác.</p>
+            </div>
+          </article>
+
+          <article class="service-card" data-animate>
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true"><i data-lucide="bot" class="icon-inline"></i></span>
+              <h3 class="card-title">Chrome Automation</h3>
+            </div>
+            <div class="card-problem">
+              <p>Làm việc lặp lại mỗi ngày (click, nhập liệu…)</p>
+              <p>Tốn thời gian đăng bài, seeding</p>
+              <p>Quản lý nhiều tài khoản thủ công</p>
+            </div>
+            <div class="card-solution">
+              <p>Tạo bot & extension giúp bạn tự động hóa toàn bộ thao tác, tiết kiệm hàng giờ mỗi ngày.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="service-cta" data-animate>
+          <p><strong>Bạn không cần lo lắng.</strong></p>
+          <p><strong>AquaTech sẽ bán giải pháp cho bạn</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="kicker"><i data-lucide="chevron-right" class="icon-inline"></i> Quy trình làm việc</p>
+        </div>
+
+        <div class="process-intro" data-animate>
+          <h2 class="process-main-title">Áp dụng Agile Scrum theo tư duy vận hành chuẩn Nhật Bản – kỷ luật, minh bạch và cải tiến liên tục (Kaizen).</h2>
+
+          <p class="process-intro-text">Tại AquaTech, chúng tôi không chỉ phát triển phần mềm — mà <strong>xây dựng quy trình làm việc chặt chẽ</strong> giống cách các công ty công nghệ tại Nhật vận hành dự án:</p>
+
+          <ul class="process-highlights">
+            <li>
+              <span class="highlight-icon">✓</span>
+              <div class="highlight-content">
+                <strong>Minh bạch tuyệt đối:</strong> tiến độ được cập nhật liên tục, khách hàng luôn nắm rõ dự án đang ở đâu
+              </div>
+            </li>
+            <li>
+              <span class="highlight-icon">✓</span>
+              <div class="highlight-content">
+                <strong>Kỷ luật cao:</strong> mỗi giai đoạn đều có mục tiêu rõ ràng, hạn chế sai sót và trễ deadline
+              </div>
+            </li>
+            <li>
+              <span class="highlight-icon">✓</span>
+              <div class="highlight-content">
+                <strong>Cải tiến liên tục (Kaizen):</strong> sản phẩm được tối ưu từng bước, không ngừng hoàn thiện qua từng vòng phát triển
+              </div>
+            </li>
+          </ul>
+
+          <p class="process-intro-detail">Thay vì làm một lần rồi bàn giao, chúng tôi <strong>chia nhỏ dự án thành các chu kỳ ngắn</strong>, liên tục kiểm tra – cập nhật – tối ưu. Điều này giúp giảm rủi ro, tiết kiệm chi phí và đảm bảo sản phẩm cuối cùng đúng với nhu cầu thực tế.</p>
+        </div>
+
+        <div class="process-closing" data-animate>
+          <p class="closing-intro"><i data-lucide="arrow-right" class="icon-inline"></i> Đây chính là cách các team công nghệ tại Nhật tạo ra sản phẩm chất lượng cao:</p>
+          <p class="closing-highlight"><strong>không làm một lần cho xong</strong> — mà <strong>cải tiến liên tục cho đến khi tối ưu nhất.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-shell">
+        <div class="section-head" data-animate>
+          <p class="kicker"><i data-lucide="chevron-right" class="icon-inline"></i> LIÊN HỆ</p>
+          <h2 class="section-title">Sẵn sàng bắt đầu dự án của bạn?</h2>
+        </div>
+
+        <div class="contact-grid">
+          <aside class="contact-panel" data-animate>
+            <h3>Kết nối trực tiếp với AquaTech</h3>
+            <p>Đội ngũ AquaTech luôn sẵn sàng tư vấn miễn phí và đưa ra giải pháp phù hợp nhất cho bạn.</p>
+            <ul class="contact-list">
+              <li><i data-lucide="phone" class="icon-inline"></i> <strong>Hotline:</strong> <a href="tel:+84867385383">0867 385 383</a></li>
+              <li><i data-lucide="mail" class="icon-inline"></i> <strong>Email:</strong> <a href="mailto:dphamthe67@gmail.com">dphamthe67@gmail.com</a></li>
+              <li><i data-lucide="message-circle" class="icon-inline"></i> <strong>Zalo:</strong> <a href="https://zalo.me/0867385383" target="_blank" rel="noreferrer">https://zalo.me/0867385383</a></li>
+            </ul>
+            <p class="contact-cta"><i data-lucide="arrow-right" class="icon-inline"></i> Phản hồi nhanh – hỗ trợ tận tâm – tư vấn rõ ràng</p>
+          </aside>
+
+          <div class="contact-panel" data-animate>
+            <form class="contact-form" data-api-form="lead" novalidate>
+              <input type="hidden" name="source_page" value="/">
+              <div class="field">
+                <label for="full-name">Họ và tên</label>
+                <input id="full-name" name="full_name" type="text" placeholder="Nguyễn Văn A" required>
+              </div>
+
+              <div class="field">
+                <label for="phone">Số điện thoại</label>
+                <input id="phone" name="phone" type="tel" placeholder="09xxxxxxxx" required>
+              </div>
+
+              <div class="field">
+                <label for="service">Dịch vụ quan tâm</label>
+                <select id="service" name="service_interest" required>
+                  <option value="">Chọn dịch vụ</option>
+                  <option value="landing-page">Website và Landing Page</option>
+                  <option value="website-thuong-mai">Website thương mại</option>
+                  <option value="phan-mem-desktop">Phần mềm Desktop</option>
+                  <option value="chrome-automation">Automation và Bot</option>
+                  <option value="tool-scraping">Tool Scraping Data</option>
+                  <option value="app-mobile">App Android và iOS (native/cross-platform)</option>
+                  <option value="code-tool">Code tool theo yêu cầu</option>
+                  <option value="thiet-ke-banner">Thiết kế banner</option>
+                  <option value="dich-vu-khac">Dịch vụ khác</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="message">Mô tả yêu cầu</label>
+                <textarea id="message" name="message" placeholder="Mô tả sơ bộ về dự án hoặc vấn đề bạn đang gặp..."></textarea>
+              </div>
+
+              <div class="field field-checkbox">
+                <input id="agreement" name="agreement" type="checkbox" required>
+                <label for="agreement" class="checkbox-label">Tôi đồng ý được liên hệ tư vấn</label>
+              </div>
+
+              <button class="btn btn-primary" type="submit"><i data-lucide="arrow-right" class="icon-inline"></i> Nhận tư vấn miễn phí</button>
+              <p class="form-note" data-form-status role="status" aria-live="polite">AquaTech sẽ liên hệ lại trong vòng 5–15 phút sau khi nhận thông tin.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-grid">
+        <!-- Column 1: Contact Info -->
+        <div class="footer-column">
+          <h3 class="footer-heading"><i data-lucide="chevron-right" class="icon-inline"></i> Thông tin liên hệ</h3>
+          <div class="footer-company">
+            <p class="company-name">AquaTech Digital Solutions</p>
+            <ul class="contact-info">
+              <li><i data-lucide="phone" class="icon-inline"></i> <strong>Hotline:</strong> <a href="tel:0867385383">0867 385 383</a></li>
+              <li><i data-lucide="mail" class="icon-inline"></i> <strong>Email:</strong> <a href="mailto:dphamthe67@gmail.com">dphamthe67@gmail.com</a></li>
+              <li><i data-lucide="message-circle" class="icon-inline"></i> <strong>Zalo:</strong> <a href="https://zalo.me/0867385383" target="_blank" rel="noreferrer">zalo.me/0867385383</a></li>
+            </ul>
+          </div>
+          <p class="footer-tagline"><i data-lucide="arrow-right" class="icon-inline"></i> Tư vấn miễn phí – phản hồi nhanh – đúng nhu cầu</p>
+        </div>
+
+        <!-- Column 2: Services -->
+        <div class="footer-column">
+          <h3 class="footer-heading"><i data-lucide="chevron-right" class="icon-inline"></i> Dịch vụ</h3>
+          <ul class="footer-list">
+            <li><a href="/dich-vu">Phần mềm Desktop theo yêu cầu</a></li>
+            <li><a href="/dich-vu">Landing Page tối ưu chuyển đổi</a></li>
+            <li><a href="/dich-vu">Website thương mại (E-commerce)</a></li>
+            <li><a href="/dich-vu">Ứng dụng Android & iOS</a></li>
+            <li><a href="/dich-vu">Tool Scraping Data</a></li>
+            <li><a href="/dich-vu">Chrome Automation</a></li>
+            <li><a href="/dich-vu">Dịch vụ khác (API, Bot, Automation)</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: AquaTech -->
+        <div class="footer-column">
+          <h3 class="footer-heading"><i data-lucide="chevron-right" class="icon-inline"></i> AquaTech</h3>
+          <ul class="footer-list">
+            <li><a href="/about">Giới thiệu</a></li>
+            <li><a href="/quy-trinh">Quy trình làm việc</a></li>
+            <li><a href="/case-studies">Dự án (Case Studies)</a></li>
+            <li><a href="/blog">Blog & Chia sẻ</a></li>
+            <li><a href="/lien-he">Liên hệ</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Support -->
+        <div class="footer-column">
+          <h3 class="footer-heading"><i data-lucide="chevron-right" class="icon-inline"></i> Hỗ trợ</h3>
+          <ul class="footer-list">
+            <li><a href="/chinh-sach">Chính sách & điều khoản</a></li>
+            <li><a href="/faq">Câu hỏi thường gặp (FAQ)</a></li>
+            <li><a href="/ho-tro-ky-thuat">Hỗ trợ kỹ thuật</a></li>
+            <li><a href="/tu-van">Tư vấn giải pháp</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 AquaTech Digital Solutions — All rights reserved</p>
+        <p class="footer-slogan">Cung cấp giải pháp công nghệ phù hợp — không bán sản phẩm dư thừa</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    lucide.createIcons();
+  });
+</script>
+</body>
+</html>

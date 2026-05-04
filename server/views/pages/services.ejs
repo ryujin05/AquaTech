@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<%- include("../partials/head") %>
+<body class="night-ocean">
+  <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <span id="scroll-progress-bar"></span>
+  </div>
+
+  <%- include("../partials/ocean-bg") %>
+
+  <%- include("../partials/header") %>
+
+  <main id="main-content">
+    <section class="section hero page-hero" id="hero">
+      <div class="container">
+        <div class="hero-grid hero-grid--split">
+          <!-- Left: Headline (compact) -->
+          <div class="hero-headline" data-hero>
+            <p class="hero-kicker">Dịch vụ & Bảng giá</p>
+            <h1 class="hero-title">Cung cấp giải pháp công nghệ phù hợp</h1>
+          </div>
+
+          <!-- Right: Features -->
+          <div class="hero-features" data-hero>
+            <div class="feature-intro">
+              <p class="feature-highlight">Tối ưu chi phí theo đúng nhu cầu của bạn</p>
+              <ul class="feature-list">
+                <li>Không dư thừa — Không build những tính năng thừa</li>
+                <li>Không template — Không dùng sản phẩm có sẵn</li>
+                <li>Tối ưu chi phí — Chỉ xây đúng cái bạn cần</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services-with-pricing">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="kicker">Danh mục</p>
+          <h2 class="section-title">Dịch vụ & Bảng giá</h2>
+          <p class="section-subtitle">
+            Mỗi dịch vụ có 3 gói phù hợp ngân sách của bạn. Chọn **Standard** để có tỉ lệ giá/hiệu quả tốt nhất, hoặc liên hệ để tư vấn gói phù hợp hơn.
+          </p>
+        </div>
+
+        <div class="services-pricing-list">
+          <% pricingCatalog.forEach((pricingService) => { %>
+            <% const serviceDetail = services.find(s => s.slug === pricingService.slug) %>
+
+            <article class="service-pricing-block" data-animate id="<%= pricingService.slug %>">
+
+              <!-- Service Header -->
+              <div class="service-pricing-head">
+                <h3 class="service-name"><%= pricingService.name %></h3>
+                <p class="service-pain"><i data-lucide="lightbulb" class="icon-inline"></i> <%= serviceDetail.teaser %></p>
+              </div>
+
+              <!-- 3-Tier Pricing Grid -->
+              <div class="pricing-tier-grid">
+                <% pricingService.packages.forEach((pkg, idx) => { %>
+                  <article class="pricing-tier-card <%= idx === 1 ? 'is-featured' : '' %>">
+                    <% if (idx === 1) { %>
+                      <div class="featured-badge"><i data-lucide="star" class="icon-inline"></i> Phổ biến</div>
+                    <% } %>
+                    <p class="price-tier"><%= pkg.tier %></p>
+                    <p class="price-value"><%= pkg.price %></p>
+                    <p class="price-timeline">Timeline: <strong><%= pkg.timeline %></strong></p>
+                    <ul class="price-features">
+                      <% pkg.features.forEach(f => { %>
+                        <li><%= f %></li>
+                      <% }) %>
+                    </ul>
+                  </article>
+                <% }) %>
+              </div>
+
+              <!-- CTA -->
+              <div class="service-pricing-cta">
+                <p>Chưa rõ chọn gói nào?</p>
+                <a class="btn btn-primary" href="/lien-he?service=<%= pricingService.slug %>">
+                  Nhận tư vấn miễn phí
+                </a>
+              </div>
+
+            </article>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing-cta">
+      <div class="container contact-shell">
+        <div class="section-head" data-animate>
+          <p class="kicker">Cần hỗ trợ?</p>
+          <h2 class="section-title">Chưa biết bắt đầu từ đâu? AquaTech sẽ giúp bạn</h2>
+          <p class="section-subtitle">
+            Chỉ cần mô tả ý tưởng hoặc nhu cầu, team sẽ tư vấn giải pháp phù hợp và báo giá rõ ràng theo từng mức độ.
+          </p>
+          <a class="btn btn-primary" href="/lien-he">Nhận tư vấn miễn phí</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include("../partials/footer") %>
+</body>
+</html>
